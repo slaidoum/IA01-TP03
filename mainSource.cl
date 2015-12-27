@@ -6,10 +6,31 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BASE DE REGLES
 ;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Définition de la base de règles
+
+;;;;
+;; PARTIE OISEAUX
+;;;;
+;; Patte semi-plamée
+(defparameter R1 
+  '( ((patte semi-palmee)(tailleDoigts 13 =)) ((animal spatule)) ))
+(defparameter R2
+  '( ((patte semi-palmee)(tailleDoigts 4 =)) ((animal avocette)) ))
+(defparameter R3
+  '( ((patte semi-palmee)(tailleDoigts 3 =)) ((animal sterne)) ))
+;; Patte lobée
+(defparameter R4
+  '( ((patte lobee)(doigts aplatis)) ((animal grebe-castagneux)) ))
+(defparameter R5
+  '( ((patte lobee)(tailleDoigts > 4)(tailleDoigts 10 <)) ((animal grebe-castagneux)) ))
+
+
+(defparameter *BR* ())
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BASE DE FAITS
