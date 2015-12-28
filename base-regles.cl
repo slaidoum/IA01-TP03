@@ -64,21 +64,21 @@
 ;; Empreintes de pelotes
 ;;;;;;;;;;;;;;;;;;;;;;;;
 (defparameter R22
-  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes presentes)) ((famille canide)) ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes presentes)) ((famille canide) "L'animal est un canidé.") ))
 (defparameter R23
-  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes retractiles)) ((famille felide)) ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes retractiles)) ((famille felide) "L'animal est un félidé.") ))
 (defparameter R24
-  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes retractiles)) ((famille viverride)) ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes retractiles)) ((famille viverride) "L'animal est un viverridé.") ))
 (defparameter R25
-  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes presentes)) ((classe-abs 5pelotes-griffes)) ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes presentes)) ((classe-abs 5pelotes-griffes) "L'animal a des pattes à 5 pelottes et des griffes.") ))
 (defparameter R26
-  '( ((classe-abs 5pelotes-griffes)(disposition cercle)) ((famille mustelide)) ))
+  '( ((classe-abs 5pelotes-griffes)(disposition cercle)) ((famille mustelide) "L'animal est un mustelidé.") ))
 (defparameter R27
-  '( ((classe-abs 5pelotes-griffes)(disposition etoile)) ((famille mustelide)) ))
+  '( ((classe-abs 5pelotes-griffes)(disposition etoile)) ((famille mustelide) "L'animal est un mustelidé.") ))
 (defparameter R28
-  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 6 =)) ((famille mustelide)) )) ;; cas spécial
+  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 6 =)) ((famille mustelide) "L'animal est un mustelidé.") )) ;; cas spécial
 (defparameter R29
-  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 9 >)(tailleDoigts < 16)) ((famille urside)) ))
+  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 9 >)(tailleDoigts < 16)) ((famille urside) "L'animal est un ursidé.") ))
 
 ;; Canidés
 (defparameter R30
@@ -116,15 +116,15 @@
 ;; Empreintes de sabots
 ;;;;;;;;;;;;;;;;;;;;;;;;
 (defparameter R43
-  '( ((typeEmpreinte sabots)(nombreDoigts 4 =)) ((famille suide)(sous-ordre suide)) ))
+  '( ((typeEmpreintes sabots)(nombreDoigts 4 =)) ((famille suide)(sous-ordre suide) "L'animal est un suidé.") ))
 (defparameter R44
-  '( ((typeEmpreinte sabots)(nombreDoigts 1 =)) ((famille equide)(sous-ordre equide)) ))
+  '( ((typeEmpreintes sabots)(nombreDoigts 1 =)) ((famille equide)(sous-ordre equide) "L'animal est un équidé.") ))
 (defparameter R45
-  '( ((typeEmpreinte sabots)(nombreDoigts 2 =)) ((sous-ordre ruminant)) ))
+  '( ((typeEmpreintes sabots)(nombreDoigts 2 =)) ((sous-ordre ruminant) "L'animal est un ruminant.") ))
 (defparameter R46
-  '( ((sous-ordre ruminant)(doigts-mediaux oui)) ((famille cervide)) ))
+  '( ((sous-ordre ruminant)(doigts-mediaux oui)) ((famille cervide) "L'animal est un cervidé.") ))
 (defparameter R47
-  '( ((sous-ordre ruminant)(doigts-mediaux non)) ((famille bovide)) ))
+  '( ((sous-ordre ruminant)(doigts-mediaux non)) ((famille bovide) "L'animal est un bovidé.") ))
 ;; Suidés
 (defparameter R48
   '( ((famille suide)) ((animal sanglier)) )) ;; unique animal suidé dans les sources
@@ -137,11 +137,11 @@
   '( ((famille cervide)(tailleDoigts 6 >)(tailleDoigts 11 <)) ((animal cerf)) ))
 ;; Bovidés
 (defparameter R52
-  '( ((famille bovide)(bords convexes)) ((famille-abst bovideConvexe)) )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords convexes)) ((famille-abst bovideConvexe) "L'animal est un bovidé à sabots convexes.") )) ;; déclaration de famille abstraite
 (defparameter R53
-  '( ((famille bovide)(bords concaves)) ((famille-abst bovideConcave)) )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords concaves)) ((famille-abst bovideConcave) "L'animal est un bovidé à sabots concaves.") )) ;; déclaration de famille abstraite
 (defparameter R54
-  '( ((famille bovide)(bords circulaires)) ((famille-abst bovideCirculaire)) )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords circulaires)) ((famille-abst bovideCirculaire) "L'animal est un bovidé à sabots circulaires.") )) ;; déclaration de famille abstraite
 (defparameter R55
   '( ((famille-abst bovideConvexe)(tailleDoigts 5 =)) ((animal mouton)) ))
 (defparameter R56
