@@ -34,9 +34,8 @@
         )
       (setq ensembleConflits (filtrageAvant baseR baseF))
       ;; S'il n'y a plus de règles applicables
-      (if (null ensembleConflits) (progn (setq conclusion nil) (return)))
-      (let ((regle))
-        (setq regle (decisionAvant ensembleConflits but))
+      (when (null ensembleConflits) (setq conclusion nil) (return))
+      (let ((regle (decisionAvant ensembleConflits but)))
         (dolist (concl (getConclusion regle))
           (cond
            ((stringp concl) (afficherConclusionRegle concl)) ;; on affiche le texte informatif
@@ -47,7 +46,7 @@
         (setq baseR (remove regle baseR)) ;; on ignore cette règle après
         )
       )
-    (afficherConclusionChainage conclusion but)
+    (afficherConcluionChainage conclusion but)
     conclusion
     )
   )
