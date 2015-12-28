@@ -11,8 +11,11 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Importation de la base de règles
+;; /!\ Fonctionne si Allegro lancé depuis le fichier directement
 (defparameter regles-pathfile 
   (merge-pathnames "base-regles.cl" *default-pathname-defaults*))
+;; /!\ Sinon, mettre son propre chemin absolu vers le fichier :
+;; (defparameter regles-pathfile (make-pathname :name "A_MODIFIER"))
 (load regles-pathfile)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
