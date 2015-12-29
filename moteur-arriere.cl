@@ -3,39 +3,41 @@
 ;;;;;;;;;;;;;;;;;
 
 ;;On récupère toutes les règles qui ont pour conclusion but
-(defun regleCandidate (but baseRegle)
+(defun regleCandidate (but *BR*)
   (cond
-   ((null baseRegle) nil)
-   ((eq but (getConclusion (car baseRegle)))
-    (cons (car baseRegle) (regleCandidate but (cdr baseRegle))))
-   (T (regleCandidate but (cdr baseRegle)))
+   ((null *BR*) nil)
+   ((equal but (car (getConclusion (car *BR*))))
+    (cons (car *BR*) (regleCandidate but (cdr *BR*))))
+   (T (regleCandidate but (cdr *BR*)))
   )
-)
+  )
 
-(defun trouver (but baseFaits)
-  (when (member but baseFaits) T)
- )
+(defun trouver (but baseF)
+  (if (equal (assoc (car but) baseF) but)
+          T
+        )
+  )
 
 ;;Fonction de lancement du moteur arrière
 (defun moteurArriere (but)
   (or (trouver but baseFaits)
-      (let ((regleCan (regleCandidate but baseRegles)) OK)
+      (let ((regleCan (regleCandidate but *BR*)) OK)
         (loop 
-          (if (or OK (nill regleCan)) (return nil))
+          (if (or OK (null regleCan)) (return nil))
           (setq OK (verifie (pop regleCan)))
-         )
-      OK
+          )
+        OK
+        )
       )
-    )
-)
+  )
 
 (defun verifie (regle)
-  (let ((OK T) (premisse (getPremisse regle)))
+  (let ((OK T) (premisse (getPremisses regle)))
     (loop
       (if (or (not OK) (null premisse)) (return nil))
-      (setq OK (moteurArrière (pop premisse)))
+      (setq OK (moteurArriere (pop premisse)))
+      )
+    OK
     )
-  OK
   )
-)
 
