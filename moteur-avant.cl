@@ -39,18 +39,31 @@
         (dolist (concl (getConclusion regle))
           (cond
            ((stringp concl) (afficherConclusionRegle concl)) ;; on affiche le texte informatif
-           ((listp concl) (push concl baseF)) ;; ajout dans la base de faits
+           ((listp concl) ;; ajout dans la base de faits
+            (setq baseF (MAJ-base-faits baseF concl))
+            ) 
            (T nil)
            )
           )
         (setq baseR (remove regle baseR)) ;; on ignore cette règle après
         )
       )
-    (afficherConcluionChainage conclusion but)
+    (afficherConclusionChainage conclusion but)
     conclusion
     )
   )
 
+(defun MAJ-base-faits (base-faits conclusion)
+  (let ((attribut (car conclusion)))
+    
+    (if (null (assoc attribut base-faits))
+        (push conclusion base-faits) ;; on ajoute et on retourne
+      (push conclusion
+            (remove
+             (assoc attribut base-faits) base-faits)) ;; on remplace,même si c'est la même valeur
+      )
+    base-faits)
+  )
 
 (defun triggerAvant ()
   (defparameter *tabu-conclu* 0)
