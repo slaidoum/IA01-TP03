@@ -22,6 +22,11 @@
 ;; Importation du moteur en chaînage avant
 (load (merge-pathnames "moteur-avant.cl" pathfile))
 
+;; MOTEUR ARRIERE
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; Importation du moteur en chaînage avant
+(load (merge-pathnames "moteur-arriere.cl" pathfile))
+
 ;; FONCTIONS UTILITAIRES
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Importation des fonctions utilitaires
@@ -41,3 +46,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 (load (merge-pathnames "jeu-essai-3.cl" pathfile))
 ;; ==> Jeu NON CONCLUANT (renvoie NIL à l'essai)
+
+;; JEU ESSAI n°4
+;;;;;;;;;;;;;;;;;;;;;;;;
+(load (merge-pathnames "jeu-essai-4.cl" pathfile))
+;; ==> Jeu NON CONCLUANT (renvoie T à l'essai)
