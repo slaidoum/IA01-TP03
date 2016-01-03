@@ -6,15 +6,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defparameter R1
-  '( ((typeEmpreintes pelotes)(patte non-palmee)(nombreDoigts 5 =)) ((sous-ordre insectivore) "L'animal est un rongueur") ))
+  '( ((typeEmpreintes mains)(patte non-palmee)(nombreDoigts 5 =)) ((sous-ordre insectivore) "L'animal est un insectivore") ))
 (defparameter R2
-  '( ((typeEmpreintes pelotes)(patte palme-arriere)(nombreDoigts 5 =))
+  '( ((typeEmpreintes mains)(patte palme-arriere)(nombreDoigts 5 =))
     ((sous-ordre rongeur) "L'animal est un rongueur" (classe-abst rongeur5doigts)) ))
 (defparameter R3
-  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)) ((sous-ordre rongeur) "L'animal est un rongeur") ))
+  '( ((typeEmpreintes mains)(nombreDoigts 4 =)) ((sous-ordre rongeur) "L'animal est un rongeur") ))
 (defparameter R4
-  '( ((nombreDoigts 4 =)(sous-ordre rongeur)) ((famille leoporide) "L'animal est un léoporidé") ))
-;; Léoporids
+  '( ((nombreDoigts 4 =)(sous-ordre rongeur)) ((famille leoporide) "L'animal est un lÃ©oporidÃ©") ))
+;; LÃ©oporids
 (defparameter R5
   '( ((famille leoporide) (tailleDoigts 3 =>) (tailleDoigts 4 =<)) ((animal lapin)) ))
 (defparameter R6
@@ -22,56 +22,56 @@
 ;; Insectivores
 (defparameter R7
   '( ((sous-ordre insectivore)(tailleDoigts 1 <))
-    ((famille soricide) "L'animal est un soricidé" (animal musaraigne)) ))
+    ((famille soricide) "L'animal est un soricidÃ©" (animal musaraigne)) ))
 (defparameter R8
   '( ((sous-ordre insectivore)(tailleDoigts 1 =>)(tailleDoigts 2 =<))
-    ((famille talpide) "L'animal est un talpidé" (animal taupe)) ))
+    ((famille talpide) "L'animal est un talpidÃ©" (animal taupe)) ))
 (defparameter R9
   '( ((sous-ordre insectivore)(tailleDoigts 3 =>)(tailleDoigts 4 =<))
-    ((famille erinaceide) "L'animal est un erinacéidé" (animal herisson)) ))
-;; Rongueurs à 5 doigts
+    ((famille erinaceide) "L'animal est un erinacÃ©idÃ©" (animal herisson)) ))
+;; Rongueurs Ã  5 doigts
 (defparameter R10
   '( ((classe-abst rongeur5doigts)(famille myocastoride)) ((animal ragondin)) ))
 (defparameter R11
   '( ((classe-abst rongeur5doigts)(famille castoride)) ((animal castor)) ))
-
+ 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Empreintes de pelotes
 ;;;;;;;;;;;;;;;;;;;;;;;;
 (defparameter R12
-  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes presentes)) ((famille canide) "L'animal est un canidé.") ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes presentes)) ((famille canide) "L'animal est un canidÃ©.") ))
 (defparameter R13
-  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes retractiles)) ((famille felide) "L'animal est un félidé.") ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 4 =)(griffes retractiles)) ((famille felide) "L'animal est un fÃ©lidÃ©.") ))
 (defparameter R14
-  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes retractiles)) ((famille viverride) "L'animal est un viverridé.") ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes retractiles)) ((famille viverride) "L'animal est un viverridÃ©.") ))
 (defparameter R15
-  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes presentes)) ((classe-abs 5pelotes-griffes) "L'animal a des pattes à 5 pelottes et des griffes.") ))
+  '( ((typeEmpreintes pelotes)(nombreDoigts 5 =)(griffes presentes)) ((classe-abs 5pelotes-griffes) "L'animal a des pattes Ã  5 pelottes et des griffes.") ))
 (defparameter R16
-  '( ((classe-abs 5pelotes-griffes)(disposition cercle)) ((famille mustelide) "L'animal est un mustelidé.") ))
+  '( ((classe-abs 5pelotes-griffes)(disposition cercle)) ((famille mustelide) "L'animal est un mustelidÃ©.") ))
 (defparameter R17
-  '( ((classe-abs 5pelotes-griffes)(disposition etoile)) ((famille mustelide) "L'animal est un mustelidé.") ))
+  '( ((classe-abs 5pelotes-griffes)(disposition etoile)) ((famille mustelide) "L'animal est un mustelidÃ©.") ))
 (defparameter R18
-  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 6 =)) ((famille mustelide) "L'animal est un mustelidé.") )) ;; cas spécial
+  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 6 =)) ((famille mustelide) "L'animal est un mustelidÃ©.") )) ;; cas spÃ©cial
 (defparameter R19
-  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 9 >)(tailleDoigts < 16)) ((famille urside) "L'animal est un ursidé.") ))
+  '( ((classe-abs 5pelotes-griffes)(disposition ligne)(tailleDoigts 9 >)(tailleDoigts < 16)) ((famille urside) "L'animal est un ursidÃ©.") ))
 
-;; Canidés
+;; CanidÃ©s
 (defparameter R20
   '( ((famille canide)(tailleDoigts 5 =)) ((animal renard)) ))
 (defparameter R21
   '( ((famille canide)(tailleDoigts 7 =)) ((animal loup)) ))
-;; Félidés
+;; FÃ©lidÃ©s
 (defparameter R22
   '( ((famille felide)(tailleDoigts 3 =)) ((animal chat-domestique)) ))
 (defparameter R23
   '( ((famille felide)(tailleDoigts 4 =)) ((animal chat-sauvage)) ))
-;; Viverridés
+;; ViverridÃ©s
 (defparameter R24
   '( ((famille viverride)) ((animal genette)) )) ;; animal unique dans les sources
-;; Ursidés
+;; UrsidÃ©s
 (defparameter R25
   '( ((famille urside)) ((animal ours)) )) ;; animal unique dans les sources
-;; Mustelidés
+;; MustelidÃ©s
 (defparameter R26
   '( ((famille mustelide)(tailleDoigts 1 =)) ((animal belette)) ))
 (defparameter R27
@@ -91,32 +91,32 @@
 ;; Empreintes de sabots
 ;;;;;;;;;;;;;;;;;;;;;;;;
 (defparameter R33
-  '( ((typeEmpreintes sabots)(nombreDoigts 4 =)) ((famille suide)(sous-ordre suide) "L'animal est un suidé.") ))
+  '( ((typeEmpreintes sabots)(nombreDoigts 4 =)) ((famille suide)(sous-ordre suide) "L'animal est un suidÃ©.") ))
 (defparameter R34
-  '( ((typeEmpreintes sabots)(nombreDoigts 1 =)) ((famille equide)(sous-ordre equide) "L'animal est un équidé.") ))
+  '( ((typeEmpreintes sabots)(nombreDoigts 1 =)) ((famille equide)(sous-ordre equide) "L'animal est un Ã©quidÃ©.") ))
 (defparameter R35
   '( ((typeEmpreintes sabots)(nombreDoigts 2 =)) ((sous-ordre ruminant) "L'animal est un ruminant.") ))
 (defparameter R36
-  '( ((sous-ordre ruminant)(doigts-mediaux oui)) ((famille cervide) "L'animal est un cervidé.") ))
+  '( ((sous-ordre ruminant)(doigts-mediaux oui)) ((famille cervide) "L'animal est un cervidÃ©.") ))
 (defparameter R37
-  '( ((sous-ordre ruminant)(doigts-mediaux non)) ((famille bovide) "L'animal est un bovidé.") ))
-;; Suidés
+  '( ((sous-ordre ruminant)(doigts-mediaux non)) ((famille bovide) "L'animal est un bovidÃ©.") ))
+;; SuidÃ©s
 (defparameter R38
-  '( ((famille suide)) ((animal sanglier)) )) ;; unique animal suidé dans les sources
-;; Cervidé
+  '( ((famille suide)) ((animal sanglier)) )) ;; unique animal suidÃ© dans les sources
+;; CervidÃ©
 (defparameter R39
   '( ((famille cervide)(tailleDoigts 5 =)) ((animal chevreuil)) ))
 (defparameter R40
   '( ((famille cervide)(tailleDoigts 6 =)) ((animal daim)) ))
 (defparameter R41
   '( ((famille cervide)(tailleDoigts 6 >)(tailleDoigts 11 <)) ((animal cerf)) ))
-;; Bovidés
+;; BovidÃ©s
 (defparameter R42
-  '( ((famille bovide)(bords convexes)) ((famille-abst bovideConvexe) "L'animal est un bovidé à sabots convexes.") )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords convexes)) ((famille-abst bovideConvexe) "L'animal est un bovidÃ© Ã  sabots convexes.") )) ;; dÃ©claration de famille abstraite
 (defparameter R43
-  '( ((famille bovide)(bords concaves)) ((famille-abst bovideConcave) "L'animal est un bovidé à sabots concaves.") )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords concaves)) ((famille-abst bovideConcave) "L'animal est un bovidÃ© Ã  sabots concaves.") )) ;; dÃ©claration de famille abstraite
 (defparameter R44
-  '( ((famille bovide)(bords circulaires)) ((famille-abst bovideCirculaire) "L'animal est un bovidé à sabots circulaires.") )) ;; déclaration de famille abstraite
+  '( ((famille bovide)(bords circulaires)) ((famille-abst bovideCirculaire) "L'animal est un bovidÃ© Ã  sabots circulaires.") )) ;; dÃ©claration de famille abstraite
 (defparameter R45
   '( ((famille-abst bovideConvexe)(tailleDoigts 5 =)) ((animal mouton)) ))
 (defparameter R46
@@ -130,7 +130,7 @@
 (defparameter R50
   '( ((famille bovide)(tailleDoigts 10 =)) ((animal vache)) ))
 
-;;;; Définition de la base de règle (AUTOMATISE)
+;;;; DÃ©finition de la base de rÃ¨gle (AUTOMATISE)
 
 ;; Fonction utilitaire
 (defun mashup-symbol (&rest objects)
